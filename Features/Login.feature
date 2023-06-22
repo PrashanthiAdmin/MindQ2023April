@@ -21,7 +21,7 @@ Feature: This feature is about login scenarios
     
     
     @invaliddatatest
-    Scenario Outline: User should not login with different invalid data
+    Scenario Outline: User should not login with different invalid credentials
     
      #Given I am in login page
      When I enter email id "<Emailid>"
