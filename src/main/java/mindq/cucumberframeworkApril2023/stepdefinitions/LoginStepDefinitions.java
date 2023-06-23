@@ -92,7 +92,7 @@ public class LoginStepDefinitions extends LoginPage {
 
 		String actualValue = captureAllProjectsText();
 
-		String expectedValue = "All projectS";
+		String expectedValue = "All projects";
 
 		Assert.assertEquals(actualValue, expectedValue);
 		
