@@ -3,6 +3,7 @@ package mindq.cucumberframeworkApril2023.stepdefinitions;
 import java.io.File;
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
@@ -27,6 +28,8 @@ import mindq.cucumberframeworkApril2023.pageobjects.LoginPage;
 import tech.grasshopper.reporter.ExtentExcelCucumberReporter;
 
 public class LoginStepDefinitions extends LoginPage {
+	
+	static Logger log = Logger.getLogger(LoginStepDefinitions.class);
 
 	//@Given("^I am in login page$")
 	@Before
@@ -63,6 +66,7 @@ public class LoginStepDefinitions extends LoginPage {
 		
 		enterEmailId(email);
 		ExtentCucumberAdapter.getCurrentStep().log(Status.INFO, "User entered email id");
+		log.info("Entered email id "+email);
 	   
 	}
 
@@ -70,7 +74,7 @@ public class LoginStepDefinitions extends LoginPage {
 	public void i_enter_password(String password) {
 		enterPassword(password);
 		ExtentCucumberAdapter.getCurrentStep().log(Status.INFO, "User entered password");
-
+		log.info("Entered password "+password);
 	}
 	
 	
@@ -79,6 +83,7 @@ public class LoginStepDefinitions extends LoginPage {
 
 		clickSignInButton();
 		ExtentCucumberAdapter.getCurrentStep().log(Status.INFO, "User clicked sign in");
+		log.info("clicked sign in button");
 
 	}
 
